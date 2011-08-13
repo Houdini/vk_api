@@ -1,4 +1,4 @@
-module ODP
+module Vk
   module TimeoutErrorHelper
     module ClassMethods
       def ok?; false end

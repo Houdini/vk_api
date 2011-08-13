@@ -1,4 +1,4 @@
-module ODP
+module Vk
   module JsonErrorHelper
     module ClassMethods
       def ok?; false end
