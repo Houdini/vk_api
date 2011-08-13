@@ -1,0 +1,16 @@
+# Temporary files of every sort
+.DS_Store
+.idea
+.rvmrc
+.stgit*
+*.swap
+*.swo
+*.swp
+*~
+bin/*
+nbproject
+patches-*
+dump.rdb
+*.ids
+doc
+.yardoc
