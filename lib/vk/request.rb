@@ -47,13 +47,9 @@ module Vk
       end
 
       def enchant response
-        if response.status == 200 and response.body.status == 'OK'
+        if response.status == 200
           def response.ok?; true end
           def response.error_message; nil end
-
-        elsif response.status == 200
-          def response.ok?; false end
-          def response.error_message; body.result end
 
         else
           def response.ok?; false end
