@@ -6,6 +6,9 @@ require 'vk/helpers/json_error_helper'
 
 module Vk
   module Request
+
+    SEPARATOR = ','
+
     def get path, options = {}
       request(:get, path, options)
     end
@@ -24,9 +27,19 @@ module Vk
 
     private
 
+      def adopt_options options
+        options.each_pair do |key, value|
+          if value.kind_of? Array
+            options[key] = options[key].join(SEPARATOR)
+          end
+        end
+        options
+      end
+
       def request(method, path, options)
 
         options = options.merge access_token: access_token
+        options = adopt_options options
 
         response = Timeout.timeout(timeout) do
           connection.send(method) do |request|

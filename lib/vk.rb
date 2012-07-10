@@ -2,9 +2,11 @@ require 'rubygems'
 require 'vk/configuration'
 require 'vk/api'
 require 'vk/client'
+require 'vk/api_params'
 
 module Vk
   extend Configuration
+  extend ApiParams
   class << self
     def new options = {}
       if options.is_a? String
