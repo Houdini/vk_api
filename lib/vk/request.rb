@@ -52,6 +52,9 @@ module Vk
             end
           end
         end
+
+        raise response.body.error.error_message if response.body.error && response.body.error.error_message
+
         enchant response
       rescue Timeout::Error
         Class.new { extend TimeoutErrorHelper::ClassMethods }
