@@ -3,6 +3,7 @@ require 'vk/configuration'
 require 'vk/api'
 require 'vk/client'
 require 'vk/api_params'
+require 'vk/errors'
 
 module Vk
   extend Configuration

@@ -1,8 +1,7 @@
 require 'timeout'
 require 'faraday_middleware'
 require 'faraday'
-require 'vk/helpers/timeout_error_helper'
-require 'vk/helpers/json_error_helper'
+require 'vk/response'
 
 module Vk
   module Request
@@ -52,25 +51,13 @@ module Vk
             end
           end
         end
-        enchant response
-      rescue Timeout::Error
-        Class.new { extend TimeoutErrorHelper::ClassMethods }
+
+        Vk::Response.new(response)
+      rescue Timeout::Error, Faraday::Error::TimeoutError
+        raise Vk::Error, 'Timeout'
       rescue MultiJson::DecodeError
-        Class.new { extend JsonErrorHelper::ClassMethods }
+        raise ResponseError, 'JSON parse error!'
       end
 
-      def enchant response
-        if response.status == 200
-          def response.ok?; true end
-          def response.error_message; nil end
-
-        else
-          def response.ok?; false end
-          def response.error_message; "Status not 200" end
-
-        end
-
-        response
-      end
   end
 end
