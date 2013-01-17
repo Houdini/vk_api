@@ -4,6 +4,7 @@ require 'vk/api'
 require 'vk/client'
 require 'vk/api_params'
 require 'vk/errors'
+require 'faraday_middleware/multi_json'
 
 module Vk
   extend Configuration

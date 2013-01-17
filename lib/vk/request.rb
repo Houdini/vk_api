@@ -55,7 +55,7 @@ module Vk
         Vk::Response.new(response)
       rescue Timeout::Error, Faraday::Error::TimeoutError
         raise Vk::Error, 'Timeout'
-      rescue MultiJson::DecodeError
+      rescue MultiJson::DecodeError, Faraday::Error::ParsingError
         raise ResponseError, 'JSON parse error!'
       end
 

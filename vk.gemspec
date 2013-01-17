@@ -18,10 +18,11 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
 
-  s.add_runtime_dependency "faraday", "~> 0.7.4"
-  s.add_runtime_dependency "faraday_middleware", "~> 0.7.0"
+  s.add_runtime_dependency 'faraday', '~> 0.8.4'
+  s.add_runtime_dependency 'faraday_middleware', '~> 0.8.8'
+  s.add_runtime_dependency 'faraday_middleware-multi_json', '~> 0.0.5'
   s.add_runtime_dependency 'hashie', '>= 1.2.0'
-  s.add_runtime_dependency 'multi_json', '>= 1.0.0'
+  s.add_runtime_dependency 'multi_json', '~> 1.5.0'
 
   s.add_development_dependency("bundler")
   s.add_development_dependency("webmock", '1.6.2')
