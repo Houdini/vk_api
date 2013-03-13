@@ -2,7 +2,7 @@ module Vk
   class Response
     def initialize(response)
       if response.body.error
-        raise ResponseError, "%d %s" % [response.body.error.error_code, response.body.error.error_msg]
+        raise ResponseError.new(response.body.error.error_msg, response.body.error.error_code.to_i)
       else
         @response = response
       end
