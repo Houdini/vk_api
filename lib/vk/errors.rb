@@ -4,6 +4,7 @@ module Vk
     attr_reader :code
 
     REVOKE_ACCESS = 5
+    REQUESTS_LIMIT_EXCEEDED = 6
 
     def initialize(msg, code = nil)
       @code = code

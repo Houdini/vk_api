@@ -6,6 +6,11 @@ describe Vk::Error do
     Vk::Error::REVOKE_ACCESS.should == 5
   end
 
+  it 'should define REQUESTS_LIMIT_EXCEEDED' do
+    defined?(Vk::Error::REQUESTS_LIMIT_EXCEEDED).should be_true
+    Vk::Error::REQUESTS_LIMIT_EXCEEDED.should == 6
+  end
+
   it 'should allow raise error via raise with message' do
     expect{ raise described_class, 'Some message' }.to raise_error(described_class, 'Some message')
   end
