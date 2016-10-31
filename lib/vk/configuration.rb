@@ -5,7 +5,7 @@ module Vk
     VALID_OPTIONS_KEYS = [:endpoint, :user_agent, :adapter, :timeout, :access_token]
 
     DEFAULT_ADAPTER     = :net_http
-    DEFAULT_ENDPOINT    = 'https://api.vkontakte.ru/method/'
+    DEFAULT_ENDPOINT    = 'https://api.vk.com/method/'
     DEFAULT_USER_AGENT  = "vk gem #{Vk::VERSION}".freeze
     DEFAULT_TIMEOUT     = 5
     DEFAILT_ACCESS_TOKEN= nil
