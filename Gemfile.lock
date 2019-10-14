@@ -2,11 +2,11 @@ PATH
   remote: .
   specs:
     vk (0.0.1)
-      faraday (~> 0.8.4)
-      faraday_middleware (~> 0.9.0)
-      faraday_middleware-multi_json (~> 0.0.5)
+      faraday
+      faraday_middleware
+      faraday_middleware-multi_json
       hashie (>= 1.2.0)
-      multi_json (~> 1.9.0)
+      multi_json
 
 GEM
   remote: http://rubygems.org/
@@ -15,16 +15,16 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
-    faraday (0.8.9)
-      multipart-post (~> 1.2.0)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
-    faraday_middleware-multi_json (0.0.5)
+    faraday (0.17.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.13.1)
+      faraday (>= 0.7.4, < 1.0)
+    faraday_middleware-multi_json (0.0.6)
       faraday_middleware
       multi_json
-    hashie (2.0.5)
-    multi_json (1.9.2)
-    multipart-post (1.2.0)
+    hashie (3.6.0)
+    multi_json (1.14.0)
+    multipart-post (2.1.1)
     rake (10.1.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -39,7 +39,7 @@ GEM
     webmock (1.6.2)
       addressable (>= 2.2.2)
       crack (>= 0.1.7)
-    yard (0.8.7.3)
+    yard (0.9.20)
 
 PLATFORMS
   ruby
